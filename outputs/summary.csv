@@ -1,0 +1,23 @@
+﻿panel,condition_id,condition_label,metric,mean,sd
+A,sandy,砂质底床,success_rate_pct,92.0,
+A,muddy,泥质底床,success_rate_pct,88.0,
+A,mixed,混合底床,success_rate_pct,90.0,
+A,high_silt,高浊度泥沙,success_rate_pct,85.0,
+B,1.0_hz,1.0 Hz,sample_amount_ml,18.421360978490057,1.1593340241959358
+D,1.0_hz,1.0 Hz,repeatability_cv_pct,6.293422215381629,
+D,1.0_hz,1.0 Hz,energy_wh,4.797778120284062,0.05719837686346924
+B,1.5_hz,1.5 Hz,sample_amount_ml,25.162997773132215,1.406767307961579
+D,1.5_hz,1.5 Hz,repeatability_cv_pct,5.590618894636053,
+D,1.5_hz,1.5 Hz,energy_wh,5.905839245434407,0.09003198533021727
+B,2.0_hz,2.0 Hz,sample_amount_ml,32.02005754468983,1.5354625427535669
+D,2.0_hz,2.0 Hz,repeatability_cv_pct,4.79531475110733,
+D,2.0_hz,2.0 Hz,energy_wh,7.2865154540324,0.0961013400465869
+B,2.5_hz,2.5 Hz,sample_amount_ml,34.766966259610214,1.760422567909551
+D,2.5_hz,2.5 Hz,repeatability_cv_pct,5.063492036561973,
+D,2.5_hz,2.5 Hz,energy_wh,9.002702276617926,0.1378446359308855
+C,seagrass,砂质海草床,achieved_depth_cm,13.762841359193498,0.5004719930599153
+C,seagrass,砂质海草床,target_depth_cm,15.0,
+C,estuary,河口泥质区,achieved_depth_cm,24.584373609256204,0.4194502040135149
+C,estuary,河口泥质区,target_depth_cm,25.0,
+C,mangrove,红树林/盐沼,achieved_depth_cm,14.257832675820808,0.42539179293522045
+C,mangrove,红树林/盐沼,target_depth_cm,15.0,

@@ -1,0 +1,80 @@
+{
+  "experiment": {
+    "title": "仿真实验结果（参数化模拟）",
+    "max_shell_angle_deg": 40.0,
+    "sample_duration_s": 30.0,
+    "full_cycle_duration_s": 600.0,
+    "repeats": 100,
+    "seed": 20260909,
+    "success_min_depth_cm": 12.0,
+    "success_min_amount_ml": 12.0,
+    "frequencies_hz": [1.0, 1.5, 2.0, 2.5]
+  },
+  "pump": {
+    "swept_volume_ml_per_cycle": 1.2,
+    "rectification_efficiency": 0.68,
+    "fill_time_constant_s": 0.32,
+    "resonance_frequency_hz": 2.0,
+    "resonance_gain": 0.07,
+    "resonance_width_hz": 0.30
+  },
+  "power": {
+    "idle_power_w": 21.0,
+    "linear_power_w_per_hz": 4.2,
+    "quadratic_power_w_per_hz2": 3.6,
+    "relative_noise": 0.015
+  },
+  "substrates": [
+    {
+      "id": "sandy",
+      "label": "砂质底床",
+      "retention_factor": 1.00,
+      "penetration_ratio": 0.96,
+      "operation_success_probability": 0.92
+    },
+    {
+      "id": "muddy",
+      "label": "泥质底床",
+      "retention_factor": 0.94,
+      "penetration_ratio": 0.94,
+      "operation_success_probability": 0.88
+    },
+    {
+      "id": "mixed",
+      "label": "混合底床",
+      "retention_factor": 0.97,
+      "penetration_ratio": 0.95,
+      "operation_success_probability": 0.90
+    },
+    {
+      "id": "high_silt",
+      "label": "高浊度泥沙",
+      "retention_factor": 0.90,
+      "penetration_ratio": 0.91,
+      "operation_success_probability": 0.85
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "seagrass",
+      "label": "砂质海草床",
+      "target_depth_cm": 15.0,
+      "achievement_ratio": 0.92,
+      "relative_noise": 0.035
+    },
+    {
+      "id": "estuary",
+      "label": "河口泥质区",
+      "target_depth_cm": 25.0,
+      "achievement_ratio": 0.984,
+      "relative_noise": 0.020
+    },
+    {
+      "id": "mangrove",
+      "label": "红树林/盐沼",
+      "target_depth_cm": 15.0,
+      "achievement_ratio": 0.947,
+      "relative_noise": 0.030
+    }
+  ]
+}
