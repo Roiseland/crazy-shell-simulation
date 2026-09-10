@@ -10,12 +10,20 @@
 python3 main.py
 ```
 
+运行 200 × 100 × 50 mm 几何耦合模型：
+
+```bash
+python3 run_refined.py
+```
+
 结果写入 `outputs/`：
 
 - `trial_results.csv`：每次模拟的原始记录；
 - `summary.csv`：四个面板使用的汇总数据；
 - `simulation_results.png`：高清位图；
 - `simulation_results.pdf`：矢量图。
+
+精细模型结果写入 `outputs_refined/`，包括缩放几何、稳态周期波形、频率扫描、黏度扫描、背压曲线、400 次不确定性试验、收敛记录以及自动生成的结果报告。
 
 ## 模型结构
 
@@ -33,6 +41,23 @@ CV = 标准差 / 均值 × 100%
 
 所有假设参数集中在 `config.json`。获得样机数据后，应优先更新：扫掠体积、充液时间常数、底质留样比例、堵塞概率、功率系数和各项随机波动。
 
+## 200 × 100 × 50 mm 精细模型
+
+精细模型采用 200 × 100 × 50 mm 整机外廓、3 mm 壁厚和 2 mm 装配间隙。扣除这些空间后，可用泵体包络为 190 × 90 × 40 mm。V3 B 砂水泵的原始包络为 100 × 70 × 19.6 mm，宽度构成限制，因此全部几何尺寸统一放大 1.285714 倍，得到 128.6 × 90 × 25.2 mm 泵体。
+
+时间域模型满足：
+
+```text
+q_in - q_out = dV/dt
+(M_in + M_out) dq_out/dt = -M_in d²V/dt²
+                              -R_in q_in - R_out q_out
+                              -F_in(q_in) - F_out(q_out) - p_back
+```
+
+矩形流道尺寸决定黏性阻力 `R`、液柱惯性 `M` 和局部损失使用的流通面积。方向性局部损失使用 `F(q) = ρKq|q|/(2A²)`，正向与反向 `K` 分别为 1 和 4。固定步长四阶 Runge–Kutta 方法计算 60 个周期，保留末周期作为稳态结果。
+
+精细模型沿用 1.2 mL/周期的参考扫掠体积，并随统一比例按体积尺度放大到 2.550 mL/周期。这一加载行程仍需实测标定。模型输出不能代替三维 CFD、流固耦合或含颗粒样机实验。
+
 ## 文件
 
 - `main.py`：命令行入口；
@@ -40,6 +65,10 @@ CV = 标准差 / 均值 × 100%
 - `plot_results.py`：四联图生成；
 - `config.json`：工况和假设参数；
 - `requirements.txt`：依赖说明。
+- `config_refined.json`：20 × 10 × 5 cm 的几何、流体和扫描参数；
+- `refined_simulation.py`：几何缩放、水力网络和时间步进；
+- `plot_refined_results.py`：精细仿真四联图；
+- `run_refined.py`：精细仿真入口。
 
 ## 结果解释
 

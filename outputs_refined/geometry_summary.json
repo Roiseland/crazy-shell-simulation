@@ -1,0 +1,22 @@
+{
+  "scale": 1.2857142857142858,
+  "outer_length_mm": 200.0,
+  "outer_width_mm": 100.0,
+  "outer_height_mm": 50.0,
+  "internal_length_mm": 194.0,
+  "internal_width_mm": 94.0,
+  "internal_height_mm": 44.0,
+  "usable_length_mm": 190.0,
+  "usable_width_mm": 90.0,
+  "usable_height_mm": 40.0,
+  "pump_length_mm": 128.57142857142858,
+  "pump_width_mm": 90.0,
+  "pump_height_mm": 25.200000000000003,
+  "fluid_height_mm": 16.2,
+  "port_length_mm": 18.0,
+  "port_width_mm": 41.142857142857146,
+  "main_channel_width_mm": 77.14285714285715,
+  "rectifier_length_mm": 72.0,
+  "side_gap_mm": 13.885714285714288,
+  "scaled_swept_volume_ml_cycle": 2.550437317784257
+}

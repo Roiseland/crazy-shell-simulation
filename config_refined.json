@@ -1,0 +1,46 @@
+{
+  "device": {
+    "outer_dimensions_mm": [200.0, 100.0, 50.0],
+    "wall_thickness_mm": 3.0,
+    "assembly_clearance_mm": 2.0,
+    "max_shell_angle_deg": 40.0
+  },
+  "source_geometry": {
+    "name": "V3 B 砂水泵",
+    "assembly_dimensions_mm": [100.0, 70.0, 19.6],
+    "body_length_mm": 100.0,
+    "body_width_mm": 70.0,
+    "cavity_depth_mm": 12.0,
+    "gasket_height_mm": 0.6,
+    "port_length_mm": 14.0,
+    "port_width_mm": 32.0,
+    "main_channel_width_mm": 60.0,
+    "rectifier_length_mm": 56.0,
+    "side_gap_mm": 10.8
+  },
+  "fluid": {
+    "density_kg_m3": 1000.0,
+    "baseline_viscosity_pa_s": 0.005,
+    "viscosity_scan_pa_s": [0.001, 0.005, 0.02, 0.05],
+    "port_loss_coefficient": 0.5,
+    "forward_loss_coefficient": 1.0,
+    "reverse_loss_coefficient": 4.0
+  },
+  "actuation": {
+    "reference_swept_volume_ml_cycle": 1.2,
+    "frequencies_hz": [1.0, 1.5, 2.0, 2.5],
+    "sample_duration_s": 30.0,
+    "settling_cycles": 60,
+    "points_per_cycle": 400
+  },
+  "uncertainty": {
+    "repeats": 100,
+    "seed": 20260910,
+    "viscosity_relative_sd": 0.15,
+    "swept_volume_relative_sd": 0.05,
+    "loss_coefficient_relative_sd": 0.10,
+    "monte_carlo_points_per_cycle": 160,
+    "monte_carlo_settling_cycles": 45
+  },
+  "backpressure_scan_pa": [0.0, 0.05, 0.10, 0.15, 0.20, 0.24, 0.30, 0.40, 0.50]
+}
